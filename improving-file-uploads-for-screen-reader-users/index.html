@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Improving File Uploads for Screen Reader Users Case Study</title>
+    <meta name="description" content="Enhanced the File Upload component by providing screen reader users with helpful confirmation throughout the file upload process" />
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/favicon/apple-touch-icon.svg" />
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon/favicon-16x16.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon/favicon-32x32.svg" />
+    <link rel="icon" type="image/png" sizes="192x192" href="../assets/favicon/android-chrome-192x192.svg" />
+    <link rel="icon" type="image/png" sizes="512x512" href="../assets/favicon/android-chrome-512x512.svg" />
+    <link rel="icon" type="image/x-icon" href="../assets/favicon/favicon.ico" />
+    <link rel="manifest" href="../assets/favicon/site.webmanifest" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" crossorigin="anonymous" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/utilities.css" />
+  </head>
+  <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <header id="hero">
+      <!-- Toggle switch -->
+      <div class="theme-switch">
+        <input type="checkbox" id="switch" aria-label="Dark Mode" />
+        <label for="switch">
+          <span class="icons">
+            <img class="theme-icons light" src="../assets/light-mode-icons.svg" />
+            <img class="theme-icons dark" src="../assets/dark-mode-icons.svg" />
+            <img class="underline" src="../assets/underline.svg" />
+          </span>
+        </label>
+      </div> 
+    </header>
+    <!-- Navbar moved outside header for fixed positioning -->
+    <nav class="navbar">
+      <div class="container">
+        <!-- Logo -->
+        <h1 id="logo">
+          <a href="../index.html"
+            ><img src="../assets/logo.png" alt="Bo's Logo"
+          /></a>
+        </h1>
+        <!-- Hamburger menu -->
+        <button class="hamburger" aria-label="Menu" aria-expanded="false" aria-controls="nav-menu" id="menu-toggle">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+        <!-- Navbar links -->
+        <ul class="nav-menu" id="nav-menu" aria-hidden="true">
+          <li><a class="nav-link" href="../index.html#projects">PROJECTS</a></li>
+          <li><a class="nav-link" href="mailto:bo.zhang.zhmzh@gmail.com">CONTACT</a></li>
+          <li>
+            <a lang="fr"
+              class="nav-link btn btn-primary"
+              href="../assets/RÉSUMÉ - Bo Zhang.pdf"
+              >RÉSUMÉ<i class="fas fa-arrow-right"></i
+            ></a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <main id="main-content">
+      <section class="hero container">
+        <div class="hero-content">
+          <h1>Improving File Uploads for Screen Reader Users</h1>
+        <p class="subtitle">Enhanced the File Upload component by providing screen reader users with helpful confirmation throughout the file upload process</p>
+        </div>
+        <div class="hero-image">
+        <img src="../assets/project/improving-file-uploads-for-screen-reader-users.png" alt="A file upload component with a list of selected files and sizes." />
+        </div>
+      </section>
+      <section class="project context container">
+        <div class="context-grid">
+          <div><strong>Duration</strong><br>May 2025 - June 2025</div>
+          <div><strong>My Role</strong><br>Accessibility Analyst, <br>UX Design</div>
+          <div><strong>Stakeholders</strong><br>UX Designers, <br>Software Engineers</div>
+        </div>
+      </section>
+      <section class="project overview container">
+        <h2>Overview</h2>
+        <p>This project focused on making the file upload component more accessible for people using screen readers. While the visual interaction seemed clear, testing with a screen reader revealed several usability gaps that created confusion and frustration. My role was to evaluate the experience, identify barriers, and design improvements that made the flow more intuitive and usable.</p>
+      </section>
+      <section class="project problem container">
+        <h2>The Problem</h2>
+        <p>How might we make the file upload process clearer and more reliable for screen reader users?</p>
+      </section>
+      <section class="project process container">
+        <h2>Process</h2>
+        <p>To uncover usability gaps, I mapped the upload journey into six steps:</p>
+        <img class="journey-map-light" src="../assets/project/improving-file-uploads-for-screen-reader-users/user-journey-map-light.png" alt="File upload journey map in six stages, showing screen reader users’ actions, expectations, experiences, and emotions, highlighting poor user experience from unclear feedback and uncertainty in the final three stages.">
+        <img class="journey-map-dark" src="../assets/project/improving-file-uploads-for-screen-reader-users/user-journey-map-dark.png" alt="File upload journey map in six stages, showing screen reader users’ actions, expectations, experiences, and emotions, highlighting poor user experience from unclear feedback and uncertainty in the final three stages.">
+        <h3>Accessibility issues identified:</h3>
+        <ul>
+          <li>Unclear upload confirmation – Screen reader users received no clear feedback about which files had been uploaded.</li>
+          <li>Ambiguous remove action – The “remove” button didn’t announce which file it applied to, creating uncertainty.</li>
+          <li>No feedback after removal – While the interface visually updated, there was no confirmation for screen reader users.</li>
+        </ul>
+        <p>These gaps were not detected by automated accessibility tools, underscoring the value of real-world testing with assistive technology.</p>
+        <h3>My approach to solving them:</h3>
+        <ul>
+          <li>Prototyped fixes using semantic HTML and ARIA attributes to add the missing feedback.</li>
+          <li>Validated improvements by replaying each scenario with a screen reader to confirm clarity and consistency.</li>
+          <li>Documented findings in a clear before-and-after format.</li>
+          <li>Collaborated with the developer to hand off solutions for implementation.</li>
+        </ul>
+      </section>
+      <section class="project solutions container">
+        <h2>Solutions</h2>
+          <h3>Clearer Upload Feedback</h3>
+            <figure>
+              <video preload="metadata" controls="" poster="">
+              <source src="../assets/project/improving-file-uploads-for-screen-reader-users/Before - Upload Status.mp4" type="video/mp4">
+              Sorry, your browser doesn’t support embedded videos, but don’t worry, you can <a href="../assets/project/improving-file-uploads-for-screen-reader-users/Before - Upload Status.mp4">download it</a>.
+              </video>
+              <figcaption><strong>Before:</strong> Users heard a vague confirmation that didn’t specify how many files were accepted.</figcaption>
+            </figure>
+            <figure>
+              <video preload="metadata" controls="" poster="">
+              <source src="../assets/project/improving-file-uploads-for-screen-reader-users/After - Upload Status.mp4" type="video/mp4">
+              Sorry, your browser doesn’t support embedded videos, but don’t worry, you can <a href="../assets/project/improving-file-uploads-for-screen-reader-users/After - Upload Status.mp4">download it</a>.
+              </video>
+              <figcaption><strong>After:</strong> Implemented <code>aria-describedby</code> to announce file status (e.g., “4 selected (3 ignored)”). This clarified how many files were uploaded and flagged the ignored ones due to upload limits.</figcaption>
+            </figure>
+          <h3>Contextual Remove Button</h3>
+            <figure>
+              <video preload="metadata" controls="" poster="">
+              <source src="../assets/project/improving-file-uploads-for-screen-reader-users/Before - File Removal.mp4" type="video/mp4">
+              Sorry, your browser doesn’t support embedded videos, but don’t worry, you can <a href="../assets/project/improving-file-uploads-for-screen-reader-users/Before - File Removal.mp4">download it</a>.
+              </video>
+              <figcaption><strong>Before:</strong> Screen reader announced only “remove”, with no context.</figcaption>
+            </figure>
+            <figure>
+              <video preload="metadata" controls="" poster="">
+              <source src="../assets/project/improving-file-uploads-for-screen-reader-users/After - File Removal.mp4" type="video/mp4">
+              Sorry, your browser doesn’t support embedded videos, but don’t worry, you can <a href="../assets/project/improving-file-uploads-for-screen-reader-users/After - File Removal.mp4">download it</a>.
+              </video>
+              <figcaption><strong>After:</strong> Added screen reader-only text (using the <code>sr-only</code> class) so the button announced both the action and file name (e.g., “Remove document.pdf”).</figcaption>
+            </figure>
+          <h3>Real-Time Removal Feedback</h3>
+            <figure>
+              <video preload="metadata" controls="" poster="">
+              <source src="../assets/project/improving-file-uploads-for-screen-reader-users/Before - File Changes Updates.mp4" type="video/mp4">
+              Sorry, your browser doesn’t support embedded videos, but don’t worry, you can <a href="../assets/project/improving-file-uploads-for-screen-reader-users/Before - File Changes Updates.mp4">download it</a>.
+              </video>
+              <figcaption><strong>Before:</strong> File removal updated visually, but no confirmation was announced.</figcaption>
+            </figure>
+            <figure>
+              <video preload="metadata" controls="" poster="">
+              <source src="../assets/project/improving-file-uploads-for-screen-reader-users/After - File Changes Updates.mp4" type="video/mp4">
+              Sorry, your browser doesn’t support embedded videos, but don’t worry, you can <a href="../assets/project/improving-file-uploads-for-screen-reader-users/After - File Changes Updates.mp4">download it</a>.
+              </video>
+              <figcaption><strong>After:</strong> Wrapped the file count message in an <code>aria-live</code> region, prompting the screen reader to automatically announce updates (e.g., “3 selected (2 ignored)”).</figcaption>
+            </figure>            
+      </section>
+            <section class="project outcome container">
+        <h2>Outcome</h2>
+        <p>With these updates:</p>
+        <ul>
+          <li>Users now receive immediate, descriptive feedback after selecting, removing, or managing files.</li>
+          <li>The flow provides full clarity and control, reducing uncertainty.</li>
+          <li>Screen reader users can confidently complete the upload process without relying on visual cues.</li>
+        </ul>
+        <p>To bring it all together, here’s a full recording of the improved file upload journey with VoiceOver. It shows how all the enhancements combine into a smooth, reliable end-to-end experience for screen reader users.</p>
+        <figure>
+          <video preload="metadata" controls="" poster="">
+          <source src="../assets/project/improving-file-uploads-for-screen-reader-users/After - Full Clip.mp4" type="video/mp4">
+          Sorry, your browser doesn’t support embedded videos, but don’t worry, you can <a href="../assets/project/improving-file-uploads-for-screen-reader-users/After - Full Clip.mp4">download it</a>.
+          </video>
+          <figcaption>Full end-to-end recording of the improved file upload journey with VoiceOver.</figcaption>
+        </figure>   
+      </section>
+      <section class="project learnings container">
+        <h2>Key Learnings</h2>
+        <ul>
+          <li><strong>Test with real users</strong> – Automated tools won’t catch everything; real screen reader testing uncovers the true barriers.</li>
+          <li><strong>Show, don’t just tell developers</strong> – Demonstrating before-and-after experiences makes the impact of accessibility fixes clear, helping developers see why enhancements matter and motivating them to prioritize accessibility.</li>
+        </ul>
+      </section>
+      <section class="project next-step container">
+        <h2>Next Steps</h2>
+        <ul>
+          <li><strong>Test with more screen readers</strong> – Expand testing beyond VoiceOver to include JAWS, NVDA, and TalkBack to ensure consistency across platforms.</li>
+          <li><strong>Conduct usability testing with real users</strong> – Partner with people who rely on screen readers daily to capture authentic feedback beyond internal testing.</li>
+          <li><strong>Explore voice control interactions</strong> – Focus on how users navigate and manage file uploads using voice commands to ensure a seamless hands-free experience.</li>
+        </ul>
+      </section>
+      <div class="container" style="margin-top:2rem;">
+        <a href="../index.html#projects" class="btn btn-secondary">Back to Projects</a>
+      </div>
+    </main>
+    <footer id="footer">
+      <div class="container">
+        <a href="mailto:bo.zhang.zhmzh@gmail.com">bo.zhang.zhmzh@gmail.com</a>
+        <!-- Social links
+        <div class="social">
+          <a href="#" target="_blank"
+            ><img src="./assets/facebook-icon.svg" alt="Facebook"
+          /></a>
+          <a href="#" target="_blank"><img src="./assets/twitter-icon.svg" alt="Twitter" /></a>
+          <a href="https://www.linkedin.com/in/bo-zhang-accessible-ux/" target="_blank"
+            ><img src="./assets/linkedin-icon.svg" alt="Linkedin"
+          /></a>
+          <a href="#" target="_blank"><img src="./assets/github-icon.svg" alt="GitHub" /></a>
+          <a href="#" target="_blank"
+            ><img src="./assets/hashnode-icon.svg" alt="Hashnode"
+          /></a>
+        </div> -->
+        <div class="attribution">
+          <a href="https://github.com/CommunityPro/portfolio-html" target="_blank" rel="noopener noreferrer">
+            <img src="https://user-images.githubusercontent.com/62628408/157202263-9174da24-b19a-4017-9b7c-a1d26ae8f014.svg" alt="attribution" width="150px" />
+          </a>
+        </div>
+        <p>Copyright &copy; Communitypro <span id="datee"></span>, All rights reserved</p>
+      </div>
+    </footer>
+    <script src="../js/script.js"></script>
+  </body>
+</html>
