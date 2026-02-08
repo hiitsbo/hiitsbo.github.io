@@ -22,7 +22,7 @@ body::selection {
 .btn {
   display: inline-block;
   padding: 0.75rem 1.9rem;
-  border-radius: 30px;
+  border-radius: 2rem;
   text-transform: uppercase;
   font-size: 0.82rem;
   transition: 0.3s;
@@ -30,7 +30,7 @@ body::selection {
 
 .btn-primary {
   background: var(--primary-color);
-  color: #000000;
+  color: var(--text-color-two);
 }
 
 .btn-secondary {
@@ -59,12 +59,28 @@ body::selection {
   display: flex;
   justify-content: center;
   padding: 0.5rem 0 0.5rem 0;
+  margin: 0.5rem;
+  order: 1;
 }
 
 #switch {
   position: absolute;
-  opacity: 0;
-  pointer-events: none;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Add focus indicator for switch using :has() for modern browsers */
+.theme-switch:has(#switch:focus-visible) .icons,
+.theme-switch:has(#switch:focus) .icons {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 8px;
+  border-radius: 0.25rem;
 }
 
 .icons {
@@ -101,11 +117,11 @@ body.light .theme-icons.dark { display: none; }
 body.dark .theme-icons.light { display: none; }
 body.dark .theme-icons.dark { display: block; }
 
-body.light .journey-map-light { display: block; }
-body.light .journey-map-dark { display: none; }
+body.light .image-light { display: block; }
+body.light .image-dark { display: none; }
 
-body.dark .journey-map-light { display: none; }
-body.dark .journey-map-dark { display: block; }
+body.dark .image-light { display: none; }
+body.dark .image-dark { display: block; }
 
 /* Ensures skip link target is visible below fixed navbar/header */
 #main-content {
@@ -145,54 +161,54 @@ body.dark .journey-map-dark { display: block; }
 }
 
 /* Project cards */
-a.card {
+a.project-card {
   display: block;
   padding: 1rem;
   background: var(--card-background);
-  color: #ffffff;
-  border-radius: 5px;
+  color: var(--text-color-two);
+  border-radius: 2rem;
   transition: 0.4s ease-in-out;
   cursor: pointer;
   text-decoration: none;
 }
 
-a.card:focus,
-a.card:hover {
+a.project-card:focus,
+a.project-card:hover {
   box-shadow: inset 0 100px 1000px 10px rgba(0, 0, 0, 0.8);
 }
 
-a.card:focus .project-info,
-a.card:hover .project-info {
+a.project-card:focus .project-info,
+a.project-card:hover .project-info {
   opacity: 1;
 }
 
 /* Project Images */
 /* project 1 */
-.card:nth-child(1) {
+.project-card:nth-child(1) {
   background: url(../assets/project/improving-file-uploads-for-screen-reader-users.png) center center/cover;
 }
 
 /* Project 2 */
-.card:nth-child(2) {
-  background: url(../assets/project/project-two.png) center center/cover;
+.project-card:nth-child(2) {
+  background: url(../assets/project/turning-accessibility-into-clear-role-based-actions.png) center center/cover;
 }
 
 /* Project 3 */
-.card:nth-child(3) {
+.project-card:nth-child(3) {
   background: url(../assets/project/project-three.png) center center/cover;
 }
 
 /* Project 4 */
-.card:nth-child(4) {
+.project-card:nth-child(4) {
   background: url(../assets/project/project-four.png) center center/cover;
 }
 
 /* Project 5 */
-.card:nth-child(5) {
+.project-card:nth-child(5) {
   background: url(../assets/project/project-five.png) center center/cover;
 }
 
 /* Project 6 */
-.card:nth-child(6) {
+.project-card:nth-child(6) {
   background: url(../assets/project/project-six.png) center center/cover;
 }

@@ -133,3 +133,36 @@ window.addEventListener('scroll', function() {
     navbar.classList.remove('scrolled');
   }
 });
+
+// Accessible Tabs for Solutions section
+(function() {
+  const tabs = document.querySelectorAll('#role-tabs [role="tab"]');
+  const tabPanels = document.querySelectorAll('#role-tabs [role="tabpanel"]');
+  if (!tabs.length) return;
+  tabs.forEach((tab, i) => {
+    tab.addEventListener('click', () => activateTab(tab));
+    tab.addEventListener('focus', () => activateTab(tab)); // Activate tab on focus
+    tab.addEventListener('keydown', (e) => {
+      let idx = Array.prototype.indexOf.call(tabs, tab);
+      if (e.key === 'ArrowRight') {
+        tabs[(idx + 1) % tabs.length].focus();
+      } else if (e.key === 'ArrowLeft') {
+        tabs[(idx - 1 + tabs.length) % tabs.length].focus();
+      } else if (e.key === 'Home') {
+        tabs[0].focus();
+      } else if (e.key === 'End') {
+        tabs[tabs.length - 1].focus();
+      }
+    });
+  });
+  function activateTab(selectedTab) {
+    tabs.forEach(tab => {
+      tab.setAttribute('aria-selected', tab === selectedTab);
+      tab.tabIndex = tab === selectedTab ? 0 : -1;
+    });
+    tabPanels.forEach(panel => {
+      panel.hidden = panel.getAttribute('aria-labelledby') !== selectedTab.id;
+    });
+    selectedTab.focus();
+  }
+})();
